@@ -30,6 +30,6 @@ pip install -r requirements.txt
 ```
 
 ## Ya esta listo para ver el proyecto
-El proyecto consto de diferentes archivos de ```JupiterNoteBook```para limpieza, análisis y visualización de los datos
+El proyecto consta de diferentes archivos de ```JupiterNoteBook``` para la limpieza, análisis y visualización de los datos.
 
 Los [Datos iniciales](Data/db/Originales/inmuebles_dommies.csv), constan de la data Scrapeada de [METRO CUADRADO](https://www.metrocuadrado.com) y se limpian en el el entorno de ```JupiterNoteBook``` llamado [clear_data](Scripts/clear_data.ipynb) y los resultados de la limpieza de esos datos estan en [Datos limpios](Data/db/Procesados/data_limpia.csv)
