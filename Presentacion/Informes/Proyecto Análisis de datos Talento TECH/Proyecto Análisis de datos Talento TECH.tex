@@ -21,31 +21,262 @@
 \usepackage{titling}
 \usepackage{titlesec}
 \usepackage{listings}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{setspace}
 \usepackage{ragged2e} % Añade el paquete ragged2e
-\graphicspath{./imagenes/}
-\DeclareGraphicsExtensions{.eps}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\usepackage{listings} % Paquete para mostrar código
+\usepackage{xcolor}   % Paquete para colores
+
+\lstset{
+	basicstyle=\ttfamily\small\color{white},         % Código en blanco, estilo monoespaciado y pequeño
+	keywordstyle=\color{cyan}\bfseries,              % Palabras clave en cian y en negrita
+	commentstyle=\color{green},                      % Comentarios en verde
+	stringstyle=\color{orange},                      % Cadenas en color naranja
+	numbers=left,                                   % Números de línea a la izquierda
+	numberstyle=\tiny\color{gray},                  % Números de línea en gris pequeño
+	frame=single,                                   % Cuadro alrededor del código
+	backgroundcolor=\color{black},                  % Fondo negro para el código
+	breaklines=true,                                % Romper líneas largas
+	captionpos=b,                                   % Leyenda abajo
+	tabsize=2,                                      % Tamaño del tabulador
+	showstringspaces=false,                         % No mostrar espacios en las cadenas
+	moredelim=**[is][\color{yellow}]{@}{@}          % Delimitadores para resaltar texto adicional
+}
+
+
+\graphicspath{{./imagenes/}} % Ruta de imágenes
+\DeclareGraphicsExtensions{.eps,.png,.jpg}
 \usepackage[colorlinks = true,
 linkcolor = black,
 urlcolor = blue,
 citecolor = black ]{hyperref}
 \renewcommand{\bibname}{Bibliografía}
 \renewcommand{\baselinestretch}{1.5}
+\definecolor{col1}{HTML}{fdfefe}
 
-\setlength{\droptitle}{-4.5\baselineskip}
-\title{   \begin{center}\rule{0.9\textwidth}{0.1mm} \end{center}
-    {\Huge\textbf{Proyecto Análisis de datos Talento TECH}}
-    \begin{center}\rule{0.9\textwidth}{0.1mm} \end{center}
-}
-\author{\textsc{Randolf Herrera}
-    \thanks{Economista}\\
-    \normalsize 
-    \href{mailto:randolf_08@hotmail.com}{randolf_08@hotmail.com}   
+% Configuración del encabezado y pie de página
+\fancypagestyle{custom}{
+	\fancyhf{} % Limpiar encabezado y pie de página
+
+	% Banner como encabezado
+	\fancyhead[L]{%
+		\begin{tikzpicture}[remember picture, overlay]
+			\node [inner sep=0pt, yshift=-0.9cm] at (current page.north) 
+			{\includegraphics[width=\paperwidth, height=2.5cm]{banner.png}};
+		\end{tikzpicture}
+	}
+	\fancyfoot[C]{\thepage} % Número de página en el centro del pie de página
+	\renewcommand{\headrulewidth}{0pt} % Sin línea debajo del encabezado
+	\renewcommand{\footrulewidth}{0pt} % Sin línea sobre el pie de página
+	
 }
 
 \begin{document}
-\maketitle
-\tableofcontents
+
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+	\node [inner sep=0pt] at (current page.center) {\includegraphics[height=\paperheight]{imagenes/portada.png}};
+\end{tikzpicture}
+	
 \newpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+	\node [inner sep=0pt, yshift=-1.9cm] at (current page.north) {\includegraphics[width=\paperwidth, height=5cm]{imagenes/banner.png}};
+\end{tikzpicture}
+
+
+\begin{center}
+	% Espacio en blanco antes de "Proyecto"
+	\vspace{1cm} % Ajusta el valor según lo necesario
+	
+	% Título "Proyecto" más grande
+	\textbf{\fontsize{50}{60}\selectfont Proyecto:} \\[1cm] % Tamaño personalizado para "Proyecto"
+	
+	\textbf{\Large Bootcamp Análisis de Datos Nivel Básico} \\[0.5cm]
+	\textbf{\Large Grupo: Análisis de Datos - BAS-1032202406} \\[2cm]
+	
+	\textbf{\Large Ejecutor Técnico:} \\[0.5cm]
+	\textbf{\large Sergio Arturo Medina Castillo} \\[2cm]
+	
+	\textbf{\Large Universidad Tecnológica de Bolívar - UTB} \\[2cm]
+	
+	\textbf{\Huge Informe Final}
+\end{center}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+	\node [inner sep=0pt, yshift=1.9cm] at (current page.south) {\includegraphics[width=\paperwidth, height=5cm]{imagenes/footbanner.png}};
+	\node [inner sep=0pt, yshift=1.8cm, xshift=5cm, align=left, text=col1] at (current page.south west) {
+		\textbf{\Large Integrantes:} \\
+		Randolf Herrera - Dario Montiel Herrera\\
+		Maryan Curiel-Zharick Garces\\
+		Sergio Roldán};
+\end{tikzpicture}
+
+\newpage
+\pagestyle{custom}
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+
+\section{Introducción}
+La ciudad de Cartagena de Indias, ubicada en la costa caribeña de Colombia, es un importante destino turístico tanto a nivel nacional como internacional. Esta creciente actividad turística ha impulsado el desarrollo del sector inmobiliario, especialmente en áreas como la compra y venta de propiedades residenciales y comerciales. Sin embargo, a pesar del dinamismo de este mercado, existen retos para los compradores y vendedores, tales como la identificación de propiedades que se ajusten a las necesidades y recursos económicos de los interesados.
+
+Este proyecto busca realizar un análisis detallado del sector inmobiliario en Cartagena, con el fin de comprender su situación actual, identificar tendencias y patrones en las compras de inmuebles y ofrecer herramientas que puedan ayudar a los compradores a tomar decisiones más informadas. Además, se propone el desarrollo de una API que permita predecir el tipo de inmueble que un comprador podría adquirir, basándose en sus recursos económicos y preferencias.
+
+A través de la aplicación de análisis de datos y técnicas de predicción, este proyecto contribuirá a mejorar la accesibilidad de la información para los compradores y facilitará una toma de decisiones más precisa en el sector inmobiliario cartagenero.
+
+\section{Contextualización del Proyecto}
+Cartagena de Indias ha sido históricamente un importante centro de comercio, cultura y turismo en Colombia. En los últimos años, la ciudad ha experimentado un crecimiento sostenido en la construcción de nuevas propiedades y en el aumento de la demanda de viviendas, especialmente debido al auge del turismo y la inversión extranjera. Esto ha generado una dinámica activa en el mercado inmobiliario, donde la oferta de inmuebles ha aumentado, pero la información sobre el tipo de propiedades que mejor se ajustan a los recursos económicos de los compradores sigue siendo insuficiente.
+
+A pesar del crecimiento del sector inmobiliario, uno de los mayores desafíos es ayudar a los potenciales compradores a encontrar propiedades que se ajusten a su capacidad económica. Actualmente, los compradores enfrentan dificultades para determinar qué tipo de inmueble se ajusta a su presupuesto, ya sea en el mercado de venta de apartamentos, casas o inmuebles comerciales.
+
+Este proyecto se enfoca en realizar un análisis exhaustivo del sector inmobiliario de Cartagena para comprender el comportamiento de los precios de venta, y las variables que influyen en la elección de los inmuebles, tales como numero de baños, área construida, metros cuadrados entre otros detallados en la base de datos, conjugando de esa forma la construcción de unos das de tipo corte transversal, donde según \citep{rodriguez2018diseno} debemos recordar que este tipo de estudio siempre la unidad de análisis es el individuo, que para efectos prácticos son las viviendas.
+
+
+
+\section{Sectores a Abordar}
+\subsection{Descripción de los Sectores}
+El sector inmobiliario es un área clave dentro de la economía de Cartagena, donde solo se tomaron en cuenta las de tipo residenciales.
+\begin{itemize}
+	\item Sector Residencial: Se refiere en este caso a la venta de viviendas para uso particular, como apartamentos, casas y chalets. Este sector es especialmente dinámico en Cartagena por su atractivo turístico.
+\end{itemize} 
+
+\subsection{Importancia de los Sectores}
+El sector inmobiliario de Cartagena es vital para el desarrollo económico de la ciudad, ya que no solo impulsa la construcción y la inversión, sino que también genera empleo en diversas áreas, desde la construcción hasta los servicios asociados, como la administración de propiedades y la comercialización.
+
+(colocar importancia)
+
+Este proyecto pretende abordar este desafío proporcionando una herramienta de visualización que ayude a los futuros compradores a identificar propiedades que se ajusten a sus posibilidades económicas.
+\section{Identificación de las fuentes de datos}
+El proceso que utilizamos para poder obtener nuestra base de datos fue mediante \textit{web scraping} al portal de metro cuadrado, luego de contar con los datos empezamos a realizar todo lo correspondiente a limpieza y organización con herramientas como \textit{Python} y librerías como \textit{pandas, bs4, random, time} y \textit{selenium} para la extracción de los datos.
+\subsection{Extracción de datos.}
+\subsubsection{Extracción Metro Cuadrado.}
+Las librerías utilizadas en la extracción de los datos fueron las que se pueden observar en el Listing \ref{lst:ExtraLib}, en donde \textit{BeautifulSoup} y \textit{selenium} se encargan de manipular un \textit{Drive} de \textit{Chrome} para ejecutar un navegador en modo prueba donde se puedan extraer las etiquetas \textit{HTML} de la pagina \textit{Metro Cuadrado}, mientras que con \textit{Pandas}, se hizo la manipulación de los datos y con \textit{random} y \textit{time} se configuro el tiempo de espera para procesar los datos.
+\begin{lstlisting}[language=Python, caption={Librerias Cargadas para la extracción}, label={lst:ExtraLib}]
+	#Cargar Librerias
+	from bs4 import BeautifulSoup as bs
+	import random
+	import time
+	import pandas as pd
+	from selenium import webdriver
+	from selenium.webdriver.chrome.options import Options
+\end{lstlisting}
+
+En el Listing \ref{lst:ExtraLib1}, podemos apreciar las configuraciones del navegador de prueba, en donde la linea 3 especificamos que entre en modo incógnito
+\begin{lstlisting}[language=Python, caption={Configuración del navegador}, label={lst:ExtraLib1}]
+# Configura las opciones de Chrome con undetected-chromedriver
+chrome_options = Options()
+chrome_options.add_argument("--incognito")
+browser = webdriver.Chrome(options=chrome_options)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption={Inicializador de instancias}, label={lst:ExtraLib2}]
+	#Iniciar instancias
+	busqueda = 'cartagena bolivar'
+	busqueda = busqueda.replace(' ', '-')
+	x = 1
+	ids = []
+	# Inicializa un conjunto
+	urls_set = set()
+	iteraciones = 0
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python, caption={Almacenar las URL`s de las viviendas}, label={lst:ExtraLib3}]
+#Realizar bule whil para encontrar ids de de url de todos las paginas
+while iteraciones < 1:
+	if x == 1:
+		url = f'https://www.metrocuadrado.com/casa/venta/{busqueda}/'
+	else:
+		url = f'https://www.metrocuadrado.com/casa/venta/{busqueda}/{x}'
+	browser.get(url)
+	time.sleep(random.randint(6, 8))
+	html = browser.page_source	
+	soup = bs(html, 'lxml')	
+	paginaactual = x	
+	# Encuentra las URLs de los inmuebles
+	if x == paginaactual:
+		lista_inmuebles = soup.find('ul', {'class': 'Ul-sctud2-0 jyGHXP realestate-results-list browse-results-list'}).find_all('li')
+		lista_inmuebles = soup.find_all('a', {'class': 'sc-bdVaJa ebNrSm'})	
+	else:
+		break	
+	for article in lista_inmuebles:
+		inmuebles_depurado = article.get('href')
+		ids.append(inmuebles_depurado)	
+	ids = [muebles for muebles in ids if muebles is not None]	
+	# Agrega las URLs al conjunto
+	urls_set.update(ids)	
+	iteraciones += 1
+	x = x + 1
+	pasadaNumero = str(x)	
+# Convierte el conjunto en una lista
+ids = list(urls_set)
+inmubles_data = pd.DataFrame(ids)
+inmubles_data = pd.DataFrame({'id': ids})
+inmubles_data.to_csv('inmuebles.csv', index=False)
+\end{lstlisting}
+
+
+ 
+
+\section{Descripción de Problema}
+Con este proyecto se desea estudiar la dinámica inmobiliaria que existe en la ciudad de Cartagena, para este análisis se ha tomado una fuente secundaria la cual nos brinda los datos correspondientes a los valores presentes en el año 2024.
+
+Vale aclarar que dentro del contexto territorial que se puede realizar de la ciudad de Cartagena podemos definir como queda estipulado en el POT vigente (Decreto 0977 de 2001).
+
+Que cuenta con una zona insular conformada por las Islas de Tierra Bomba, Islas del archipiélago de Corales del Rosario, Islas del archipiélago de San Bernardo e Isla Fuerte, que representan el 4,83 \% en relación del territorio. Dentro de la jurisdicción del Distrito, además de la cabecera hay 30 centros poblados, de los cuales 15, están ubicados en la zona norte, 7 en la zona sur y 8 están en zona insular (Alcaldía de Cartagena de Indias, 2022).
+
+A niveles generales el distrito de Cartagena está distribuido con una zona urbano que ronda las 7.805 Hectáreas siendo esta una representación porcentual de 12.81\%, la zona rural representa un 41\% con 25.224 Hectáreas, mientras que el porcentaje restante lo comparten las zonas suburbanas y de expansión.
+
+\subsection{Pregunta Negocio}
+¿Cuáles son las principales dinámicas inmobiliarias presentes en la ciudad de Cartagena durante el año 2024, y cómo se pueden identificar patrones significativos en los valores del mercado inmobiliario utilizando los datos disponibles?
+\subsection{Objetivo General}
+Aplicar todas las técnicas de análisis de datos propuestas en nuestra formación para poder identificar la dinámica inmobiliaria presentes en la ciudad de Cartagena durante el año 2024. 
+
+\subsection{Objetivo Especifico}
+\begin{itemize}
+	\item	Identificar el precio de venta de los inmuebles en los barrios de Cartagena.
+	\item Calcular el precio promedio por barrio.
+	\item Determinar número de inmuebles de venta por estrato
+	\item Reconocer valores máximos y mínimos por barrio
+	\item Calcular valor promedio de metro cuadrado por barrio
+	\item Estimar valor promedio de metro cuadrado por estrato
+\end{itemize}
+
+
+\section{Desafíos y como abordarlos en la identificación y recopilación de fuentes de datos}
+
+Uno de los principales desafíos que se presentó al momento de identificar nuestra problemática de estudio, fue la poca fuente de datos existentes, luego de esto planteamos como una posible solución la técnica de web scraping , la cual genero una base de datos con más de mil registros, pero al momento de realizar todo el proceso de limpieza, quedamos con tan solo 649 registros. 
+Las tecnologías que utilizamos para poder realizar todo el proceso de análisis de datos fueron:
+\begin{itemize}
+	\item [] \textbf{Python:} porque este lenguaje de programación permite junto a sus librerías como  Numpy y Pandas la fácil manipulación de datos.
+	\item [] \textbf{Shiny App:} es un framework en R diseñado para crear aplicaciones web interactivas que faciliten la visualización y exploración de datos.
+\end{itemize} 
+
+\section{Aporte de la analítica de datos al problema a desarrollar}
+La analítica de datos desempeña un papel fundamental en el análisis del mercado inmobiliario, proporcionando herramientas y metodologías que permiten a compradores, vendedores e inversores tomar decisiones informadas y basadas en evidencia. Al analizar datos sobre precios de casas, ubicación y características, se pueden responder a preguntas claves que ayudan a entender mejor el mercado, por ejemplo, se puede calcular el precio promedio de las casas en diferentes barrios, identificar cómo han cambiado los precios a lo largo del tiempo y evaluar qué características de las propiedades tienen un mayor impacto en su valor.
+
+Además, la analítica permite comparar precios entre distintas áreas, lo que es útil para identificar las más asequibles o las más caras. La identificación de tendencias es otro aporte significativo de la analítica de datos. Al analizar patrones en los precios de las casas, se pueden anticipar cambios en el mercado y planificar estrategias de compra o venta. Asimismo, la segmentación del mercado permite personalizar las estrategias de marketing y ventas, dirigiéndose a grupos específicos según ubicación, tipo de propiedad o características demográficas.
+
+La valoración precisa de propiedades es posible mediante el uso de modelos de regresión lineal múltiple y otras técnicas analíticas, lo que ayuda a estimar el valor de una propiedad considerando múltiples variables. Esto, a su vez, facilita el análisis de la competencia, permitiendo evaluar cómo se comparan las propiedades en venta con otras similares en el mercado y establecer precios competitivos. La analítica de datos también contribuye a la optimización de recursos para agentes inmobiliarios y desarrolladores, identificando áreas con mayor potencial de retorno de inversión.
+
+Además, mediante modelos predictivos, se puede anticipar la demanda en diferentes áreas y momentos, lo que es esencial para la planificación de proyectos de desarrollo. Otro aspecto importante es la evaluación de riesgos. La analítica permite identificar y evaluar riesgos asociados con inversiones en propiedades, como fluctuaciones en el mercado o cambios en la economía local. Esto es crucial para tomar decisiones más seguras y fundamentadas. 
+Finalmente, la analítica de datos mejora la experiencia del cliente al analizar preferencias y comportamientos, lo que permite ofrecer un servicio más personalizado. Las visualizaciones efectivas de datos facilitan la comprensión de la información, lo que es especialmente útil para presentar hallazgos a un público no técnico.
+
+\section{Metodología Propuesta}
+\subsection{Tipo de analítica}
+\subsection{Metodología CRISP-DM}
+\section{Herramientas por utilizar}
+\subsection{Descripción de las herramientas}
+\subsection{Justificación para su uso}
+\section{Conclusiones}
+\newpage
+\section{Bibliografía}
 \bibliography{biblio}
 \bibliographystyle{apalike}     
 \end{document}
