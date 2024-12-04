@@ -124,16 +124,16 @@ citecolor = black ]{hyperref}
 \newpage
 
 \section{Introducción}
-La ciudad de Cartagena de Indias, ubicada en la costa caribeña de Colombia, es un importante destino turístico tanto a nivel nacional como internacional. Esta creciente actividad turística ha impulsado el desarrollo del sector inmobiliario, especialmente en áreas como la compra y venta de propiedades residenciales y comerciales. Sin embargo, a pesar del dinamismo de este mercado, existen retos para los compradores y vendedores, tales como la identificación de propiedades que se ajusten a las necesidades y recursos económicos de los interesados.
+La ciudad de Cartagena de Indias, ubicada en la costa caribe de Colombia, es un importante destino turístico tanto a nivel nacional como internacional. Esta creciente actividad turística ha impulsado el desarrollo del sector inmobiliario, especialmente en áreas como la compra y venta de propiedades residenciales y comerciales. Sin embargo, a pesar del dinamismo de este mercado, existen retos para los compradores y vendedores, tales como la identificación de propiedades que se ajusten a las necesidades y recursos económicos de los interesados.
 
-Este proyecto busca realizar un análisis detallado del sector inmobiliario en Cartagena, con el fin de comprender su situación actual, identificar tendencias y patrones en las compras de inmuebles y ofrecer herramientas que puedan ayudar a los compradores a tomar decisiones más informadas. Además, se propone el desarrollo de una API que permita predecir el tipo de inmueble que un comprador podría adquirir, basándose en sus recursos económicos y preferencias.
+Este proyecto busca realizar un análisis de datos detallado, teniendo en cuenta que estos pueden ser replicados\citep{borjas2020validez} en el sector inmobiliario en Cartagena, con el fin de comprender su situación actual, identificar patrones en la venta de inmuebles y ofrecer herramientas que puedan ayudar a los compradores a tomar decisiones más informadas.
 
-A través de la aplicación de análisis de datos y técnicas de predicción, este proyecto contribuirá a mejorar la accesibilidad de la información para los compradores y facilitará una toma de decisiones más precisa en el sector inmobiliario cartagenero.
+A través de la aplicación de análisis de datos, este proyecto contribuirá a mejorar la accesibilidad de la información para los compradores y facilitará una toma de decisiones más precisa en el sector inmobiliario de la ciudad de Cartagena.
 
 \section{Contextualización del Proyecto}
-Cartagena de Indias ha sido históricamente un importante centro de comercio, cultura y turismo en Colombia. En los últimos años, la ciudad ha experimentado un crecimiento sostenido en la construcción de nuevas propiedades y en el aumento de la demanda de viviendas, especialmente debido al auge del turismo y la inversión extranjera. Esto ha generado una dinámica activa en el mercado inmobiliario, donde la oferta de inmuebles ha aumentado, pero la información sobre el tipo de propiedades que mejor se ajustan a los recursos económicos de los compradores sigue siendo insuficiente.
+Cartagena de Indias ha sido históricamente un importante centro de comercio, cultura y turismo en Colombia. En los últimos años, la ciudad ha experimentado un crecimiento sostenido en la construcción de nuevas propiedades, especialmente debido al auge del turismo y la inversión extranjera, según \citep{go2023}, la oferta inmobiliaria en el 2022 serian $49.363$ inmuebles, donde los que están en venta representan el 60\%, aproximadamente $29.736$, Lo cual ha generado una dinámica activa en el mercado inmobiliario, donde la oferta de inmuebles tiene una importante participación en el sector, pero la información sobre el tipo de propiedades que mejor se ajustan a los recursos económicos de los compradores sigue siendo insuficiente.
 
-A pesar del crecimiento del sector inmobiliario, uno de los mayores desafíos es ayudar a los potenciales compradores a encontrar propiedades que se ajusten a su capacidad económica. Actualmente, los compradores enfrentan dificultades para determinar qué tipo de inmueble se ajusta a su presupuesto, ya sea en el mercado de venta de apartamentos, casas o inmuebles comerciales.
+A pesar del crecimiento del sector inmobiliario, uno de los mayores desafíos es ayudar a los potenciales compradores a encontrar propiedades que se ajusten a su capacidad económica. Hoy por hoy, los compradores se enfrentan a muchas dificultades para determinar qué tipo de inmueble se ajusta a su presupuesto, ya sea en el mercado de venta de apartamentos y casas.
 
 Este proyecto se enfoca en realizar un análisis exhaustivo del sector inmobiliario de Cartagena para comprender el comportamiento de los precios de venta, y las variables que influyen en la elección de los inmuebles, tales como numero de baños, área construida, metros cuadrados entre otros detallados en la base de datos, conjugando de esa forma la construcción de unos das de tipo corte transversal, donde según \citep{rodriguez2018diseno} debemos recordar que este tipo de estudio siempre la unidad de análisis es el individuo, que para efectos prácticos son las viviendas.
 
@@ -141,7 +141,7 @@ Este proyecto se enfoca en realizar un análisis exhaustivo del sector inmobilia
 
 \section{Sectores a Abordar}
 \subsection{Descripción de los Sectores}
-El sector inmobiliario es un área clave dentro de la economía de Cartagena, donde solo se tomaron en cuenta las de tipo residenciales.
+El sector inmobiliario es un área clave dentro de la economía de Cartagena, donde solo se tomaron en cuenta el de tipo residencial.
 \begin{itemize}
 	\item Sector Residencial: Se refiere en este caso a la venta de viviendas para uso particular, como apartamentos, casas y chalets. Este sector es especialmente dinámico en Cartagena por su atractivo turístico.
 \end{itemize} 
@@ -149,9 +149,7 @@ El sector inmobiliario es un área clave dentro de la economía de Cartagena, do
 \subsection{Importancia de los Sectores}
 El sector inmobiliario de Cartagena es vital para el desarrollo económico de la ciudad, ya que no solo impulsa la construcción y la inversión, sino que también genera empleo en diversas áreas, desde la construcción hasta los servicios asociados, como la administración de propiedades y la comercialización.
 
-(colocar importancia)
-
-Este proyecto pretende abordar este desafío proporcionando una herramienta de visualización que ayude a los futuros compradores a identificar propiedades que se ajusten a sus posibilidades económicas.
+Este proyecto pretende abordar el desafío de proporcionar una herramienta de visualización que ayude a los futuros compradores a identificar propiedades que se ajusten a sus posibilidades económicas.
 \section{Identificación de las fuentes de datos}
 El proceso que utilizamos para poder obtener nuestra base de datos fue mediante \textit{web scraping} al portal de metro cuadrado, luego de contar con los datos empezamos a realizar todo lo correspondiente a limpieza y organización con herramientas como \textit{Python} y librerías como \textit{pandas, bs4, random, time} y \textit{selenium} para la extracción de los datos.
 \subsection{Extracción de datos.}
@@ -175,6 +173,9 @@ chrome_options.add_argument("--incognito")
 browser = webdriver.Chrome(options=chrome_options)
 \end{lstlisting}
 
+Luego en el Listing \ref{lst:ExtraLib2}, iniciamos instancias de características como la búsqueda a realizar en la url, lego el remplazo de los espacios por guiones, la inicialización de un contador y una lista vaciá y por ultimo, la creación de un conjunto vació llamado $urls_set$.
+
+
 \begin{lstlisting}[language=Python, caption={Inicializador de instancias}, label={lst:ExtraLib2}]
 	#Iniciar instancias
 	busqueda = 'cartagena bolivar'
@@ -185,7 +186,7 @@ browser = webdriver.Chrome(options=chrome_options)
 	urls_set = set()
 	iteraciones = 0
 \end{lstlisting}
-
+Por ultimo en el Listing \ref{lst:ExtraLib3}, realiza la extracción de URLs de inmuebles disponibles para venta en la página web de Metrocuadrado. A continuación, se detalla el funcionamiento paso a paso:
 
 \begin{lstlisting}[language=Python, caption={Almacenar las URL`s de las viviendas}, label={lst:ExtraLib3}]
 #Realizar bule whil para encontrar ids de de url de todos las paginas
@@ -221,7 +222,14 @@ inmubles_data = pd.DataFrame({'id': ids})
 inmubles_data.to_csv('inmuebles.csv', index=False)
 \end{lstlisting}
 
+Resumen del Proceso
 
+\begin{enumerate}
+	\item Construye la URL de búsqueda de inmuebles en Metrocuadrado.
+	\item Carga la página y obtiene su contenido HTML.
+	\item Extrae las URLs de los inmuebles y las guarda en una lista.
+	\item Filtra las URLs únicas y las exporta a un archivo CSV.
+\end{enumerate}
  
 
 \section{Descripción de Problema}
