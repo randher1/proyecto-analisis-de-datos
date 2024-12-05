@@ -261,8 +261,8 @@ Aplicar todas las técnicas de análisis de datos propuestas en nuestra formaci�
 Uno de los principales desafíos que se presentó al momento de identificar nuestra problemática de estudio, fue la poca fuente de datos existentes, luego de esto planteamos como una posible solución la técnica de web scraping , la cual genero una base de datos con más de mil registros, pero al momento de realizar todo el proceso de limpieza, quedamos con tan solo 649 registros. 
 Las tecnologías que utilizamos para poder realizar todo el proceso de análisis de datos fueron:
 \begin{itemize}
-	\item [] \textbf{Python:} porque este lenguaje de programación permite junto a sus librerías como  Numpy y Pandas la fácil manipulación de datos.
-	\item [] \textbf{Shiny App:} es un framework en R diseñado para crear aplicaciones web interactivas que faciliten la visualización y exploración de datos.
+	\item [] \textbf{Python:} porque este lenguaje de programación permite junto a sus librerías como  Numpy y Pandas la fácil manipulación de datos \citep{python}.
+	\item [] \textbf{Shiny App:} es un framework en R diseñado para crear aplicaciones web interactivas que faciliten la visualización y exploración de datos \citep{shinyapp}.
 \end{itemize} 
 
 \section{Aporte de la analítica de datos al problema a desarrollar}
@@ -276,10 +276,30 @@ Además, mediante modelos predictivos, se puede anticipar la demanda en diferent
 Finalmente, la analítica de datos mejora la experiencia del cliente al analizar preferencias y comportamientos, lo que permite ofrecer un servicio más personalizado. Las visualizaciones efectivas de datos facilitan la comprensión de la información, lo que es especialmente útil para presentar hallazgos a un público no técnico.
 
 \section{Metodología Propuesta}
+La metodología utilizada en este proyecto consiste en una investigación explicativa con un enfoque cuantitativo, debido a la manera en que abordamos el fenómeno en estudio. La primera actividad que realizamos, tras obtener nuestra base de datos, fue aplicar la metodología CRISP-DM. En este proceso, se consideraron cada una de sus etapas, como el análisis, para entender la estructura de los datos. Además, aplicamos un proceso de limpieza para eliminar las inconsistencias en los registros. Finalmente, transformamos los datos de acuerdo con los objetivos específicos de nuestra investigación, logrando así responder a nuestra pregunta de negocio. Los resultados obtenidos fueron graficados para facilitar su interpretación.
 \subsection{Tipo de analítica}
+La analítica aplicada en este proyecto es de naturaleza descriptiva. Utilizando diversas técnicas, logramos resumir y organizar los datos históricos de nuestra base de datos. Empleamos técnicas estadísticas básicas, como el cálculo de promedios, el análisis de tendencias y la distribución de datos, lo que nos permitió comprender los datos de manera clara y precisa, como se logra evidenciar en nuestro repositorio publico de Github.
 \subsection{Metodología CRISP-DM}
+La metodología CRISP-DM, cuyas siglas en inglés significan Cross Industry Standard Process for Data Mining (Proceso Estándar Inter-Industrias para Minería de Datos), tiene como objetivo principal crear procesos estructurados y sistemáticos que permitan desarrollar modelos predictivos y realizar análisis predictivo. Aunque en esta fase de formación no logramos desarrollar modelos predictivos completos, fue de suma importancia entender e interiorizar la metodología. Esto nos permitió, especialmente en el trabajo en equipo, dirigir nuestros esfuerzos en las diferentes fases del proyecto. Primero entendimos el modelo de negocio, luego comprendimos los datos, los preparamos, los modelamos y, finalmente, evaluamos y desplegando los resultados en herramientas gráficas.
 \section{Herramientas por utilizar}
+Las herramientas que utilizamos fueron:
+\begin{itemize}
+	\item Pandas
+	\item Matplotlib
+	\item Geopandas
+	\item Seaborn
+	\item Folium
+\end{itemize}
 \subsection{Descripción de las herramientas}
+\textbf{Pandas}: Una potente librera de Python que permite el analisis gracias a su facilidad para manipular los datos, dentro de sus funciones principales se encuentra, el leer base de datos en formatos como CSV entre otros \citep{reback2020pandas}.
+
+\textbf{Matplotlib}: Es una libreria que permite realizar graficos y visualizaciones \citep{Hunter:2007}.
+
+\textbf{Geopandas}: libreria que permite el uso de datos geoespaciales. Combina la funcionalidad de pandas con la capacidad de manejar geometrías geográficas usando shapely \citep{kelsey_jordahl_2020_3946761}.
+
+\textbf{Seaborn}: libreria basada en Matplotlib y diseñada para trabajar de manera más eficiente con los datos de Pandas. Proporciona una interfaz de alto nivel para crear gráficos estadísticos atractivos y bien informados \citep{Waskom2021}.
+
+\textbf{Folium}: libreria de Python que se utiliza para crear mapas interactivos basados en folletos \citep{folium}.
 \subsection{Justificación para su uso}
 \section{Conclusiones}
 \newpage
