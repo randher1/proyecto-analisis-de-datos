@@ -5,7 +5,19 @@ import plotly.express as px
 from shinywidgets import render_widget  
 from ipyleaflet import Map  
 
+#Remplazo en estrato del float por int
 
+remplazosInt = {
+    "5.0": 5,
+    "4.0": 4,
+    "3.0": 3,
+    "2.0": 2,
+}
+
+# Realiza el reemplazo en la columna 'estrato' y convierte a int
+df['estrato'] = df['estrato'].replace(remplazosInt).astype(int)
+
+print(df['estrato'])
 
 def server(input, output, session):
     @reactive.Calc
