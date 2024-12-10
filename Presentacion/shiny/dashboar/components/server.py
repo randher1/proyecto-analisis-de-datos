@@ -3,6 +3,9 @@ from shared import df
 from components.moneyFormat import money_format
 import plotly.express as px
 from shinywidgets import render_widget  
+from ipyleaflet import Map  
+
+
 
 def server(input, output, session):
     @reactive.Calc
@@ -92,6 +95,11 @@ def server(input, output, session):
         )
 
         return fig
+    
+    @output
+    @render_widget  
+    def map():
+        return Map(center=(50.6252978589571, 0.34580993652344), zoom=3)
 
 
 

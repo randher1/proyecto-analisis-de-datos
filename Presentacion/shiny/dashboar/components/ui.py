@@ -1,13 +1,21 @@
 from shiny import ui
 from components.icons import money, home
 from shinywidgets import output_widget
+from shared import df
+from pathlib import Path
+
+
 
 # Obtener los valores únicos para los selectores
-from shared import df
-
 city_names = list(df['localizacion'].unique())
 city_names.insert(0, "Todos") 
 localidad_names = ['Histórica y del Caribe Norte']
+
+ui.include_css(
+    Path(__file__).parent / "../styles.css"
+)
+
+
 
 app_ui = ui.page_sidebar(
     ui.sidebar(
@@ -30,7 +38,7 @@ app_ui = ui.page_sidebar(
             ui.output_ui("dynamic_price"),
             ui.HTML('<span style="font-size:24px; font-weight: bold;">2024</span>'),
             showcase=money,
-            theme="bg-gradient-indigo-purple",
+            theme="bg-gradient-indigo-purple"
         ),
         ui.value_box(
             "",
@@ -43,22 +51,26 @@ app_ui = ui.page_sidebar(
             theme="gradient-blue-indigo",
             showcase=home,
             title="hola",
-            value="j"
+            value="j",
         ),
         fill=False,
     ),
     ui.card(
-        ui.card_header("Map (drag the markers to change locations)"),
+        ui.card_header("Map"),
         output_widget("map"),
-    ),
+        height="5000px",
+        ),
+    
     ui.layout_columns(
     ui.card(
         ui.card_header("Grafico"),
-        ui.div(output_widget("graf"), class_="w-full h-96"),
+        ui.div(output_widget("graf")),
+        height="5000px"
     ),
     ui.card(
         ui.card_header("Estratos"),
-        ui.div(output_widget("estrato"), class_="w-full h-96"),
+        ui.div(output_widget("estrato")),
+        height="5000px"
     ),
     ),
     title="DASHBOARD INMOBILIARIA METRO CUADRADO",

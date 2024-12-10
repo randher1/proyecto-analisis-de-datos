@@ -5,3 +5,24 @@
 .plotly .modebar-container {
   display: none !important;
 }
+
+.custom-map-height {
+  height: 5000px;  /* Ajusta la altura a lo que necesites */
+}
+
+/* Hacer el dashboard desplazable */
+.scrollable-dashboard {
+  overflow-y: auto; /* Permitir el desplazamiento vertical */
+  height: 100vh; /* Asegurar que el contenido no se desborde */
+}
+
+/* Hacer que las tarjetas sean desplazables si su contenido excede la altura definida */
+.scrollable-card {
+  overflow-y: auto;
+  max-height: 500px; /* O cualquier altura que prefieras */
+}
+
+.my-card{
+  height: 100px;
+  color: aqua;
+}
