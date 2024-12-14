@@ -13,7 +13,7 @@ import pandas as pd
 
 locale.setlocale(locale.LC_ALL, '') 
 app_dir = Path(__file__).parent
-geojson_path = app_dir / "../../../../Data/shapefiles/cartagena.geojson"
+geojson_path = app_dir / "../data/cartagena.geojson"
 
 # Remplazo en estrato del float por int
 remplazosInt = {

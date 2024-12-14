@@ -8,5 +8,5 @@ from ipyleaflet import GeoJSON
 app_dir = Path(__file__).parent
 
 # Data Frame
-df = pd.read_csv(app_dir / "../../../Data/db/Procesados/data_limpia.csv")
+df = pd.read_csv(app_dir / "data/data_limpia.csv")
 

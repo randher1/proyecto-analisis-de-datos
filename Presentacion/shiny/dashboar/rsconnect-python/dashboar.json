@@ -1,0 +1,12 @@
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "/home/randolf/Documentos/python/proyecto analisis de datos/Presentacion/shiny/dashboar",
+        "app_url": "https://randher1.shinyapps.io/dashboard_metro_cuadrado/",
+        "app_id": 13596478,
+        "app_guid": null,
+        "title": "Dashboard Metro Cuadrado",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}
