@@ -1,28 +1,15 @@
-:root {
-  --bslib-sidebar-main-bg: #f8f8f8;
+/* Estilo para la tarjeta que contiene el mapa */
+#map {
+  height: 400px !important;
 }
 
-.plotly .modebar-container {
-  display: none !important;
+/* Si quieres cambiar el fondo o añadir otras propiedades */
+#map .card-header {
+  background-color: #f0f0f0;
 }
 
-.custom-map-height {
-  height: 5000px;  /* Ajusta la altura a lo que necesites */
-}
-
-/* Hacer el dashboard desplazable */
-.scrollable-dashboard {
-  overflow-y: auto; /* Permitir el desplazamiento vertical */
-  height: 100vh; /* Asegurar que el contenido no se desborde */
-}
-
-/* Hacer que las tarjetas sean desplazables si su contenido excede la altura definida */
-.scrollable-card {
-  overflow-y: auto;
-  max-height: 500px; /* O cualquier altura que prefieras */
-}
-
-.my-card{
-  height: 100px;
-  color: aqua;
+/* Para cambiar la tarjeta en general, usando su clase */
+.shiny-card {
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
